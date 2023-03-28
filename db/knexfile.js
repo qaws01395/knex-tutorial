@@ -12,6 +12,16 @@ module.exports = {
   //     filename: './dev.sqlite3'
   //   }
   // },
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: path.join(__dirname, 'test.sqlite3')
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    },
+    useNullAsDefault: true
+  },
 
   development: {
     client: 'sqlite3',
