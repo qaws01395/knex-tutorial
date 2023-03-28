@@ -9,7 +9,9 @@ exports.up = function (knex) {
       table.string("name", 255).notNullable();
     })
     .createTable("user_roles", function (table) {
-      table.increments(), table.integer();
+      table.increments(),
+        table.integer("user_id").notNullable,
+        table.integer("role_id").notNullable;
     });
 };
 
